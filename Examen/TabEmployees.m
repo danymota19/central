@@ -9,6 +9,9 @@
 #import "TabEmployees.h"
 #import "cellEmployees.h"
 #import "Declarations.h"
+#import "PopinEmployees.h"
+
+
 
 @interface TabEmployees ()
 
@@ -33,11 +36,16 @@
                                                  name:UIApplicationDidBecomeActiveNotification object:nil];
     
     mUserDefaults   = [NSUserDefaults standardUserDefaults];
+    [maImages removeAllObjects];
+    [maNames removeAllObjects];
+     NSLog(@"maNaMes1 %@", maNames );
+  
     
     
     if (!(nil == [mUserDefaults objectForKey:@"permNames"]) && !([@"" isEqual:[mUserDefaults objectForKey:@"permNames"]]))
     {//Case when varaibel has some value in permanent phone memory
         maNames    = [mUserDefaults objectForKey:@"permNames"];
+        NSLog(@"maNaMes %@", maNames );
     }
     else
     {//No info has been stored before
@@ -51,7 +59,7 @@
     else
     {//No info has been stored before
         maImages        = [NSMutableArray arrayWithObjects: nInitialsImages];
-        NSLog(@"maNames %@", maNames );
+        NSLog(@"maNames %@", maImages );
     }
     
     [self.tblEmployees reloadData];
@@ -82,7 +90,7 @@
 //-------------------------------------------------------------------------------
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cellStates");
+    NSLog(@"cellEmployees");
     static NSString *CellIdentifier = @"cellEmployees";
     
     cellEmployees *cell = (cellEmployees *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];

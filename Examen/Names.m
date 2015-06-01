@@ -8,6 +8,7 @@
 
 #import "Names.h"
 #import "Declarations.h"
+#import "Exam.h"
 
 @interface Names ()
 
@@ -31,7 +32,17 @@
     
     self.lblFirst.text   = maFirst[self.iPageIndex];
     self.lblSecond.text  = maSecond[self.iPageIndex];
+    self.lblMensaje.text = maMensajes[self.iPageIndex];
+
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    miAppear = (int)self.iPageIndex;
+    NSLog(@"numero de pagina %d", miAppear );
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

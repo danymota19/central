@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 
+//Labels
+@property (weak, nonatomic) IBOutlet UILabel *lblSkip;
+
 
 
 

@@ -7,7 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import "PopinMaps.h"
+#import "UIViewController+MaryPopin.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface TabMaps : UIViewController
+
+@interface TabMaps : UIViewController <CLLocationManagerDelegate, GMSMapViewDelegate>
+
+
+//Variables
+@property (strong, nonatomic) CLLocationManager     *locationManager;
+@property (strong, nonatomic) CLLocation            *location;
+
+
+//Views
+@property (strong, nonatomic) IBOutlet UIView *mapView;
+
+//Actions
+- (IBAction)btnRefresh:(id)sender;
+- (IBAction)btnAdd:(id)sender;
+
+
 
 @end

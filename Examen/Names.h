@@ -15,5 +15,6 @@
 //Labels
 @property (weak, nonatomic) IBOutlet UILabel *lblFirst;
 @property (weak, nonatomic) IBOutlet UILabel *lblSecond;
+@property (weak, nonatomic) IBOutlet UILabel *lblMensaje;
 
 @end

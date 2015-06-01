@@ -12,10 +12,13 @@
 #import "Names.h"
 #import "TabBTCentral.h"
 #import "TabEmployees.h"
+#import "TabBarController.h"
+#import "TabMaps.h"
 
 int iNumberOfPages = 3;
 NSUInteger iIndex2 ;
-int index2;
+//int index2;
+int x=0;
 
 
 @interface Exam ()
@@ -51,7 +54,10 @@ int index2;
 {
     maFirst  = [NSMutableArray arrayWithObjects: nTutorialfirst];
     maSecond = [NSMutableArray arrayWithObjects: nTutorialsecond];
-}
+    maMensajes = [NSMutableArray arrayWithObjects: nMensaje];
+    self.lblSkip.text = @"Saltar Intro";
+    
+   }
 
 /**********************************************************************************************/
 #pragma mark - Buttons functions
@@ -66,8 +72,12 @@ int index2;
     
     else
     {
-        TabEmployees *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TabEmployees"];
-    [self presentViewController:viewController animated:YES completion:nil];
+        
+       TabBarController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TabBarController"];
+   [self presentViewController:viewController animated:YES completion:nil];
+        
+    //       TabMaps *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"TabMaps"];
+      //    [self presentViewController:viewController animated:YES completion:nil];
     }
     
 }
@@ -105,6 +115,10 @@ int index2;
     
 
     [self.view bringSubviewToFront:self.btnSkip];
+    [self.view bringSubviewToFront:self.lblSkip];
+    
+    
+
     
 }
 
@@ -121,34 +135,61 @@ int index2;
     Names *NameIntro     = [self.storyboard instantiateViewControllerWithIdentifier:@"Names"];
     NameIntro.iPageIndex        = index2;
     
-    NSLog(@"viewControllerAtIndex index2 = %d", (int)index2);
+    NSLog(@"viewControllerAtIndex x = %d", x);
+    
+    
+   
+        
     return NameIntro;
 }
 //-------------------------------------------------------------------------------
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index2 = ((Names*) viewController).iPageIndex;
+   NSUInteger index2 = ((Names*) viewController).iPageIndex;
     
     if ((index2 == 0) || (index2 == NSNotFound)) {
         
         return nil;
     }
     
+    if (miAppear >= 2 )
+    {
+        NSLog(@"color");
+        self.lblSkip.textColor = [UIColor blueColor ];
+    }
+    else self.lblSkip.textColor = [UIColor grayColor ];
+    
     index2--;
     iIndex2 = index2;
+    x--;
+    if (x << 0) x=0;
+    
+    
     return [self viewControllerAtIndex:index2];
+    
 }
 //-------------------------------------------------------------------------------
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index2 = ((Names*) viewController).iPageIndex;
+    NSUInteger  index2  = ((Names*) viewController).iPageIndex;
     
     if (index2 == NSNotFound) {
         return nil;
     }
     
+    if (miAppear >= 2 )
+    {
+        NSLog(@"color");
+        self.lblSkip.textColor = [UIColor blueColor ];
+    }
+    else self.lblSkip.textColor = [UIColor grayColor ];
+    
     index2 ++;
     iIndex2 = index2;
+    x++;
+     if (x >> 2) x=2;
+    
+   
     return [self viewControllerAtIndex:index2];
 }
 //-------------------------------------------------------------------------------
