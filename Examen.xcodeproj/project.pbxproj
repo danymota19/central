@@ -33,6 +33,7 @@
 		02F47C6F1B163231006F28B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F47C6E1B163231006F28B8 /* UIKit.framework */; };
 		02FC5BBA1B13892C000D0D5E /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FC5BB91B13892C000D0D5E /* Exam.m */; };
 		02FC5BBD1B138CCF000D0D5E /* Names.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FC5BBC1B138CCF000D0D5E /* Names.m */; };
+		D5F906091B20B31900A35A45 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F906081B20B31900A35A45 /* CoreBluetooth.framework */; };
 		FB68745B1B0E06E600A59881 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB68745A1B0E06E600A59881 /* main.m */; };
 		FB68745E1B0E06E600A59881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB68745D1B0E06E600A59881 /* AppDelegate.m */; };
 		FB6874611B0E06E600A59881 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6874601B0E06E600A59881 /* ViewController.m */; };
@@ -94,6 +95,7 @@
 		02FC5BB91B13892C000D0D5E /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
 		02FC5BBB1B138CCF000D0D5E /* Names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Names.h; sourceTree = "<group>"; };
 		02FC5BBC1B138CCF000D0D5E /* Names.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Names.m; sourceTree = "<group>"; };
+		D5F906081B20B31900A35A45 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		FB6874551B0E06E600A59881 /* Examen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6874591B0E06E600A59881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB68745A1B0E06E600A59881 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,10 +132,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02AD1FC41B17AC36000B8B76 /* GoogleMaps.framework in Frameworks */,
-				02F47C6F1B163231006F28B8 /* UIKit.framework in Frameworks */,
+				D5F906091B20B31900A35A45 /* CoreBluetooth.framework in Frameworks */,
+				FB68747F1B0E0EB600A59881 /* Social.framework in Frameworks */,
 				02F47C6D1B163224006F28B8 /* Foundation.framework in Frameworks */,
 				02F47C6B1B16320D006F28B8 /* CoreGraphics.framework in Frameworks */,
+				02AD1FC41B17AC36000B8B76 /* GoogleMaps.framework in Frameworks */,
+				02F47C6F1B163231006F28B8 /* UIKit.framework in Frameworks */,
 				026891251B14E76000101065 /* SystemConfiguration.framework in Frameworks */,
 				026891231B14E75400101065 /* QuartzCore.framework in Frameworks */,
 				026891211B14E74E00101065 /* OpenGLES.framework in Frameworks */,
@@ -147,7 +151,6 @@
 				026891111B14E6EC00101065 /* CoreData.framework in Frameworks */,
 				0268910F1B14E6E200101065 /* AVFoundation.framework in Frameworks */,
 				026891061B14DDC000101065 /* MobileCoreServices.framework in Frameworks */,
-				FB68747F1B0E0EB600A59881 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +193,7 @@
 		FB68744C1B0E06E600A59881 = {
 			isa = PBXGroup;
 			children = (
+				D5F906081B20B31900A35A45 /* CoreBluetooth.framework */,
 				FB6874571B0E06E600A59881 /* Examen */,
 				FB6874711B0E06E600A59881 /* ExamenTests */,
 				FB6874561B0E06E600A59881 /* Products */,

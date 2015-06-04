@@ -2,8 +2,8 @@
 //  Declarations.h
 //  Examen
 //
-//  Created by Agustin Castaneda on 21/05/15.
-//  Copyright (c) 2015 Agustin Castaneda. All rights reserved.
+//  Created by Daniela Mota / Ruben Ramos on 21/05/15.
+//  Copyright (c) 2015 Daniela Mota / Ruben Ramos. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -26,6 +26,13 @@
 
 //Colors
 #define     nBlackTransparency  colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.50
+
+//Bluetooth
+
+#define TRANSFER_SERVICE_UUID           @"ECD22D85-7082-4AE3-BBCA-D270BCC7DDB0"
+#define TRANSFER_CHARACTERISTIC_UUID    @"19A6B53D-BA1D-4518-A9BD-312F9DFBAC6F"
+
+#define NOTIFY_MTU      20
 
 //Employees
 extern NSMutableArray *maNames;
